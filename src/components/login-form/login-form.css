@@ -1,0 +1,12 @@
+.login-form__container {
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form__register-label {
+    text-decoration: underline;
+    font-size: 12px;
+    text-align: center;
+}

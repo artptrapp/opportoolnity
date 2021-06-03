@@ -1,0 +1,13 @@
+{
+    "translation": {
+        "find_transparent_info": "Find all the information about your new job - or get found by it!",
+        "login_area": {
+            "title": "Login to access your account",
+            "username": "Username",
+            "password": "Password",
+            "login": "login",
+            "register_label": "No account yet?"
+        },
+        "login_motto": "Jobseeker centered platform"
+    }
+}
