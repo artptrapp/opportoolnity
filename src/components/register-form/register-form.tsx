@@ -1,20 +1,20 @@
-import { Box, Grid, TextField } from "@material-ui/core";
+import { Box, Button, Grid, TextField } from "@material-ui/core";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router";
 import LoadableButton from "../loadable-button/loadable-button";
-import "./login-form.css"
+import "./register-form.css"
 
-export default function LoginForm() {
+export default function RegisterForm() {
   const { t } = useTranslation()
   const history = useHistory()
   const [loading, setLoading] = useState(false)
   return (
-    <Grid className="login-form__container">
+    <Grid className="register-form__container">
       <Box component="div">
         <Grid item>
           <h3>
-            {t('login_area.title')}
+            {t('register_area.title')}
           </h3>
         </Grid>
         <Grid item>
@@ -22,7 +22,7 @@ export default function LoginForm() {
             <TextField
               fullWidth
               variant="outlined"
-              label={t('login_area.username')}>
+              label={t('register_area.username')}>
             </TextField>
           </Box>
         </Grid>
@@ -31,7 +31,17 @@ export default function LoginForm() {
             <TextField
               fullWidth
               variant="outlined"
-              label={t('login_area.password')}
+              label={t('register_area.password')}
+              type="password">
+            </TextField>
+          </Box>
+        </Grid>
+        <Grid item>
+          <Box component="div" m={1}>
+            <TextField
+              fullWidth
+              variant="outlined"
+              label={t('register_area.password_confirmation')}
               type="password">
             </TextField>
           </Box>
@@ -39,19 +49,19 @@ export default function LoginForm() {
         <Grid item>
           <Box component="div" m={1}>
             <LoadableButton
-              loading={loading}
               fullWidth
               variant="contained"
               color="primary"
+              loading={loading}
               onClick={() => setLoading(true)}
             >
-              {t('login_area.login')}
+              {t('register_area.register')}
             </LoadableButton>
           </Box>
         </Grid>
         <Grid item>
-          <Box onClick={() => history.push('/login/signup')} className="login-form__register-label" component="div" m={1}>
-            {t('login_area.register_label')}
+          <Box onClick={() => history.replace('/login/signin')} className="register-form__register-label" component="div" m={1}>
+            {t('register_area.login_label')}
           </Box>
         </Grid>
       </Box>

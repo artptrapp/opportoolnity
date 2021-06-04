@@ -1,3 +1,4 @@
+import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 import {
   Redirect,
   Route,
@@ -5,20 +6,30 @@ import {
   Switch
 } from "react-router-dom";
 
-
 import Login from "./pages/login/login";
 
 export default function App() {
+  const theme = createMuiTheme({
+    palette: {
+      secondary: {
+        main: "#FFF"
+      }
+    }
+  })
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Login />
+    <ThemeProvider theme={theme}>
+      <Router>
+        <Switch>
+          <Route exact path="/">
 
-          {/* Redirects all 404 to the login page */}
-          <Redirect to="/" />
-        </Route>
-      </Switch>
-    </Router>
+            {/* Redirects all 404 to the login page */}
+            <Redirect to="/login" />
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+        </Switch>
+      </Router>
+    </ThemeProvider>
   );
 }
