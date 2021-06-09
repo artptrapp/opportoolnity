@@ -2,22 +2,23 @@ import { Button, CircularProgress } from "@material-ui/core";
 import { DefaultComponentProps, OverridableTypeMap } from "@material-ui/core/OverridableComponent";
 
 type Props = DefaultComponentProps<OverridableTypeMap> & {
-  loading?: boolean,
+  isLoading?: boolean,
   children?: React.ReactChildren
 }
 
 export default function LoadableButton(props: Props) {
+  const { isLoading, ...other } = props
   return (
-    <Button {...props}>
+    <Button {...other}>
       {
-        props.loading &&
+        isLoading &&
         <CircularProgress
           color="secondary"
           size="1.5rem"
         />
       }
       {
-        !props.loading && props.children
+        !isLoading && props.children
       }
     </Button>
   )

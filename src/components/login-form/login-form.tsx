@@ -1,28 +1,38 @@
 import { Box, Grid, TextField } from "@material-ui/core";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router";
+import AuthContext from "../../contexts/auth/auth-context";
 import LoadableButton from "../loadable-button/loadable-button";
 import "./login-form.css"
 
 export default function LoginForm() {
   const { t } = useTranslation()
   const history = useHistory()
-  const [loading, setLoading] = useState(false)
+  const { signIn, isLoggingIn, errorMessage } = useContext(AuthContext)
+
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+
   return (
     <Grid className="login-form__container">
-      <Box component="div">
-        <Grid item>
-          <h3>
+      <Box className="login-form__container-box" component="div">
+        <Grid className="login-form__header-container" item>
+          <h3 className="login-form__container-title">
             {t('login_area.title')}
           </h3>
+          <Box className="login-form__container-login-feedback" component="span" m={1}>
+            {errorMessage}
+          </Box>
         </Grid>
         <Grid item>
           <Box component="div" m={1}>
             <TextField
               fullWidth
               variant="outlined"
-              label={t('login_area.username')}>
+              label={t('login_area.username')}
+              onChange={ev => setUsername(ev.target.value)}
+            >
             </TextField>
           </Box>
         </Grid>
@@ -32,18 +42,20 @@ export default function LoginForm() {
               fullWidth
               variant="outlined"
               label={t('login_area.password')}
-              type="password">
+              type="password"
+              onChange={ev => setPassword(ev.target.value)}
+            >
             </TextField>
           </Box>
         </Grid>
         <Grid item>
           <Box component="div" m={1}>
             <LoadableButton
-              loading={loading}
+              isLoading={isLoggingIn}
               fullWidth
               variant="contained"
               color="primary"
-              onClick={() => setLoading(true)}
+              onClick={() => signIn(username, password)}
             >
               {t('login_area.login')}
             </LoadableButton>
@@ -55,6 +67,6 @@ export default function LoginForm() {
           </Box>
         </Grid>
       </Box>
-    </Grid>
+    </Grid >
   )
 }

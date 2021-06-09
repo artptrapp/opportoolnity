@@ -5,3 +5,12 @@
     margin-right: 0 !important;
     max-width: 100% !important;
 }
+
+.login-page__form-container {
+    display: grid;
+    align-items: center;
+}
+
+.login-page__logo-container {
+    text-align: center;
+}

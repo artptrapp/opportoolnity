@@ -11,18 +11,47 @@ export default function RegisterForm() {
   const [loading, setLoading] = useState(false)
   return (
     <Grid className="register-form__container">
-      <Box component="div">
+      <Box className="register-form__container-box" component="div">
         <Grid item>
-          <h3>
+          <h3 className="login-form__container-title">
             {t('register_area.title')}
           </h3>
+        </Grid>
+        <Grid container>
+          <Grid item xs={12} sm={6} md={6} lg={6}>
+            <Box component="div" m={1}>
+              <TextField
+                fullWidth
+                variant="outlined"
+                label={t('register_area.first_name')}>
+              </TextField>
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={6} md={6} lg={6}>
+            <Box component="div" m={1}>
+              <TextField
+                fullWidth
+                variant="outlined"
+                label={t('register_area.last_name')}>
+              </TextField>
+            </Box>
+          </Grid>
         </Grid>
         <Grid item>
           <Box component="div" m={1}>
             <TextField
               fullWidth
               variant="outlined"
-              label={t('register_area.username')}>
+              label={t('register_area.email')}>
+            </TextField>
+          </Box>
+        </Grid>
+        <Grid item>
+          <Box component="div" m={1}>
+            <TextField
+              fullWidth
+              variant="outlined"
+              label={t('register_area.email_confirmation')}>
             </TextField>
           </Box>
         </Grid>
@@ -52,7 +81,7 @@ export default function RegisterForm() {
               fullWidth
               variant="contained"
               color="primary"
-              loading={loading}
+              isLoading={loading}
               onClick={() => setLoading(true)}
             >
               {t('register_area.register')}
@@ -65,6 +94,6 @@ export default function RegisterForm() {
           </Box>
         </Grid>
       </Box>
-    </Grid>
+    </Grid >
   )
 }

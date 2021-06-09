@@ -11,7 +11,7 @@ export default function LoginMotto() {
       <div className="login-motto__shadow">
         <Box className="login-motto__motto-text" component="div" m={1}>
           <h1>
-            opportoolnity
+            TOOL EASY
           </h1>
           <h5>
             {t('login_motto')}

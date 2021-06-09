@@ -1,5 +1,8 @@
 {
     "translation": {
+        "error_messages": {
+            "invalid_login_attempt": "Could not login. Please check your details and try again."
+        },
         "find_transparent_info": "Find all the information about your new job - or get found by it!",
         "login_area": {
             "title": "Login to access your account",
@@ -11,11 +14,14 @@
         "login_motto": "Jobseeker centered platform",
         "register_area": {
             "title": "Create your account",
-            "username": "Username",
+            "first_name": "First name",
+            "last_name": "Last name",
             "password": "Password",
             "password_confirmation": "Password confirmation",
             "register": "create account",
-            "login_label": "Already a member?"
+            "login_label": "Already a member?",
+            "email": "E-mail address",
+            "email_confirmation": "Confirm your e-mail address"
         }
     }
 }

@@ -1,6 +1,5 @@
 .register-form__container {
-    height: 100vh;
-    display: grid;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -10,4 +9,12 @@
     font-size: 12px;
     text-align: center;
     cursor: pointer;
+}
+
+.register-form__register-title {
+    text-align: center !important;
+}
+
+.register-form__container-box {
+    width: 80%;
 }

@@ -1,8 +1,12 @@
 .login-form__container {
-    height: 100vh;
-    display: grid;
+    display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.login-form__container-title {
+    text-align: center !important;
+    margin-bottom: .3rem;
 }
 
 .login-form__register-label {
@@ -10,4 +14,17 @@
     font-size: 12px;
     text-align: center;
     cursor: pointer;
+}
+
+.login-form__container-box {
+    width: 80%;
+}
+
+.login-form__container-login-feedback {
+    color: red;
+    font-size: 11px;
+}
+
+.login-form__header-container {
+    text-align: center;
 }
