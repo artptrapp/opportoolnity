@@ -1,0 +1,15 @@
+.header-bar__container {
+    position: fixed;
+    height: 65px;
+    background-color: var(--primaryColor);
+    top: 0;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.header-bar__container-menu-icon {
+    padding-right: 1.5rem;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+}

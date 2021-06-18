@@ -1,0 +1,17 @@
+.application-menu__container {
+    border-right: 1px solid white;
+    background-color: var(--primaryColor);
+    color: white;
+}
+
+.application-menu__container>.pro-sidebar-inner {
+    background: none
+}
+
+.pro-inner-list-item {
+    background-color: var(--primaryColor) !important
+}
+
+.pro-icon-wrapper {
+    background-color: var(--primaryColor) !important;
+}

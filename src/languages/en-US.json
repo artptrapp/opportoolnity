@@ -12,6 +12,10 @@
             "register_label": "No account yet?"
         },
         "login_motto": "Jobseeker centered platform",
+        "menu": {
+            "click_to_login": "Click here to login",
+            "not_logged_in": "You are not logged in"
+        },
         "register_area": {
             "title": "Create your account",
             "first_name": "First name",

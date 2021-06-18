@@ -10,6 +10,10 @@ import Login from "./pages/login/login";
 
 import firebase from 'firebase'
 import firebaseConfig from './config/firebase-config'
+import Home from "./pages/home/home";
+import HeaderBar from "./components/header-bar/header-bar";
+import ApplicationMenu from "./components/application-menu/application-menu";
+import MenuProvider from "./contexts/menu/menu-provider";
 
 export default function App() {
 
@@ -28,20 +32,19 @@ export default function App() {
   })
   return (
     <AuthProvider>
-      <ThemeProvider theme={theme}>
-        <Router>
-          <Switch>
-            <Route exact path="/">
-
-              {/* Redirects all 404 to the login page */}
-              <Redirect to="/login" />
-            </Route>
-            <Route path="/login">
-              <Login></Login>
-            </Route>
-          </Switch>
-        </Router>
-      </ThemeProvider>
+      <MenuProvider>
+        <ThemeProvider theme={theme}>
+          <Router>
+            <HeaderBar />
+            <ApplicationMenu />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/login" component={Login} />
+              <Route path="/home" component={Home} />
+            </Switch>
+          </Router>
+        </ThemeProvider>
+      </MenuProvider>
     </AuthProvider>
   );
 }
